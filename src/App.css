@@ -1,0 +1,406 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f4f1e9;
+  overflow-x: hidden;
+}
+
+.website {
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f1e9;
+  overflow: hidden;
+  border: none !important;
+}
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 20;
+  border: none !important;
+}
+
+.header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: 9px;
+  color: #292923;
+}
+
+.header span {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #77736b;
+  margin-top: 4px;
+}
+
+/* MAIN SECTION */
+
+.fashion-stage {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 110px);
+  min-height: 650px;
+  overflow: hidden;
+  border: none !important;
+}
+
+.background-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#c9c2b5 0.7px, transparent 0.7px);
+  background-size: 22px 22px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* MODELS */
+
+.models-container {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.model {
+  position: absolute;
+  bottom: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.8s ease;
+}
+
+.model img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+}
+
+.model.center {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 76%;
+  z-index: 5;
+}
+
+.model.right-one {
+  left: 72%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: 42%;
+  z-index: 4;
+}
+
+.model.right-two {
+  left: 87%;
+  transform: translateX(-50%);
+  width: 12%;
+  height: 32%;
+  z-index: 2;
+}
+
+.model.left-one {
+  left: 28%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: 42%;
+  z-index: 4;
+}
+
+.model.left-two {
+  left: 13%;
+  transform: translateX(-50%);
+  width: 12%;
+  height: 32%;
+  z-index: 2;
+}
+
+/* ROUNDED DESCRIPTION CARD */
+
+.description-card {
+  position: absolute;
+  top: 13%;
+  width: 230px;
+  min-height: 165px;
+  padding: 22px;
+  background: #30312d;
+  color: #f5f0e6;
+  z-index: 10;
+
+  border-radius: 22px;
+  overflow: hidden;
+  border: none;
+
+  box-shadow: 0 12px 30px rgba(45, 42, 35, 0.10);
+
+  animation: cardAppear 0.6s ease;
+}
+
+.description-card.left {
+  left: 4%;
+}
+
+.description-card.right {
+  right: 4%;
+}
+
+.card-number {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #c8b99d;
+}
+
+.description-card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  font-weight: 500;
+  margin: 12px 0 8px;
+}
+
+.description-card p {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #d3d0c8;
+}
+
+.card-line {
+  width: 35px;
+  height: 1px;
+  background: #c8b99d;
+  margin-top: 15px;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* COLLECTION BUTTONS */
+
+.collection-navigation {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 95%;
+  z-index: 15;
+}
+
+.collection-navigation button {
+  border: 1px solid #bdb5a8;
+  background: transparent;
+  color: #4c4942;
+  padding: 10px 17px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.collection-navigation button:hover,
+.collection-navigation button.selected {
+  background: #30312d;
+  color: #fff;
+  border-color: #30312d;
+}
+
+/* SLIDE COUNT */
+
+.slide-count {
+  position: absolute;
+  right: 35px;
+  bottom: 30px;
+  font-size: 12px;
+  color: #393831;
+  z-index: 15;
+}
+
+.slide-count span {
+  color: #a39c90;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .fashion-stage {
+    min-height: 600px;
+  }
+
+  .description-card {
+    top: 12%;
+    width: 185px;
+    min-height: 145px;
+    padding: 17px;
+    border-radius: 19px;
+  }
+
+  .description-card h2 {
+    font-size: 24px;
+  }
+
+  .description-card p {
+    font-size: 9px;
+  }
+
+  .model.center {
+    width: 40%;
+  }
+
+  .collection-navigation {
+    gap: 7px;
+  }
+
+  .collection-navigation button {
+    padding: 9px 12px;
+    font-size: 9px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .header {
+    height: 90px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    letter-spacing: 7px;
+  }
+
+  .header span {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .fashion-stage {
+    height: calc(100vh - 90px);
+    min-height: 650px;
+  }
+
+  .model {
+    bottom: 23%;
+  }
+
+  .model.center {
+    width: 56%;
+    height: 57%;
+  }
+
+  .model.right-one {
+    left: 78%;
+    width: 22%;
+    height: 35%;
+  }
+
+  .model.left-one {
+    left: 22%;
+    width: 22%;
+    height: 35%;
+  }
+
+  .model.right-two {
+    left: 93%;
+    width: 14%;
+    height: 27%;
+  }
+
+  .model.left-two {
+    left: 7%;
+    width: 14%;
+    height: 27%;
+  }
+
+  .description-card {
+    top: 7%;
+    width: 140px;
+    min-height: 112px;
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .description-card.left {
+    left: 3%;
+  }
+
+  .description-card.right {
+    right: 3%;
+  }
+
+  .card-number {
+    font-size: 7px;
+  }
+
+  .description-card h2 {
+    font-size: 20px;
+    margin: 7px 0 5px;
+  }
+
+  .description-card p {
+    font-size: 8px;
+    line-height: 1.5;
+  }
+
+  .card-line {
+    margin-top: 8px;
+  }
+
+  .collection-navigation {
+    bottom: 15px;
+    flex-wrap: wrap;
+    width: 96%;
+    gap: 6px;
+  }
+
+  .collection-navigation button {
+    padding: 8px 10px;
+    font-size: 8px;
+  }
+
+  .slide-count {
+    display: none;
+  }
+}
